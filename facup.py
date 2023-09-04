@@ -40,6 +40,7 @@ def simulate_round(teams):
         print(f"{team1} vs {team2}")
         time.sleep(2)
     print("-------------------------")
+    print("\n")
     time.sleep(3)
     input("Press any key to begin the round: ")
     print("\n")
@@ -107,6 +108,9 @@ def simulate_round(teams):
                     print("Match goes to a penalty shootout")
                     penscore_team2 = int(inputNumber(f"Enter the score for {team2} after penalties: "))
                     penscore_team1 = int(inputNumber(f"Enter the score for {team1} after penalties: "))
+                    while penscore_team2 == penscore_team1:
+                        penscore_team2 = int(inputNumber(f"Enter the score for {team2} after penalties: "))
+                        penscore_team1 = int(inputNumber(f"Enter the score for {team1} after penalties: "))
                     if penscore_team1 > penscore_team2:
                         winners.append(team1)
                         print(f"{team1} defeats {team2} {penscore_team1}-{penscore_team2} on penalties!\n")
